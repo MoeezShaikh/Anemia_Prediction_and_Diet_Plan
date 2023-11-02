@@ -1,0 +1,140 @@
+/* Header */
+.header-dark .navbar {
+  background:#3f3f3f;
+  padding-top:0;
+  padding-bottom:0;
+  color:#fff;
+  border-radius:0;
+  box-shadow:none;
+  border:none;
+}
+
+@media (min-width:768px) {
+  .header-dark .navbar {
+    padding-top:.75rem;
+    padding-bottom:.75rem;
+  }
+}
+
+.header-dark .navbar .navbar-brand {
+  font-weight:bold;
+  color:inherit;
+}
+
+.header-dark .navbar .navbar-brand:hover {
+  color:#f0f0f0;
+}
+
+.header-dark .navbar .navbar-collapse span {
+  margin-top:5px;
+}
+
+.header-dark .navbar .navbar-collapse span .login {
+  color:#d9d9d9;
+  margin-right:.5rem;
+  text-decoration:none;
+}
+
+.header-dark .navbar .navbar-collapse span .login:hover {
+  color:#fff;
+}
+
+.header-dark .navbar .action-button, .header-dark .navbar .action-button:active {
+  background:#009cea;
+
+  font-size:inherit;
+  color:#fff;
+  box-shadow:none;
+  border:none;
+  text-shadow:none;
+  padding:.5rem .8rem;
+  transition:background-color 0.25s;
+}
+
+.header-dark .navbar .action-button:hover {
+  background:#008bd1;
+}
+/* header end */
+
+
+
+
+
+
+.article-list {
+  color:#313437;
+  background:linear-gradient(to bottom, rgba(255, 255, 255, 0.653), rgba(251, 239, 248, 0.73)),url('/static/bg.jpg') center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.article-list p {
+  color:#7d8285;
+}
+
+.article-list h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .article-list h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.article-list .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto;
+}
+
+.article-list .intro p {
+  margin-bottom:0;
+}
+
+.article-list .articles {
+  padding-bottom:40px;
+}
+
+.article-list .item {
+  padding-top:50px;
+  min-height:425px;
+  text-align:center;
+}
+
+.article-list .item .name {
+  font-weight:bold;
+  font-size:16px;
+  margin-top:20px;
+  color:inherit;
+}
+
+.article-list .item .description {
+  font-size:14px;
+  margin-top:15px;
+  margin-bottom:0;
+}
+
+.article-list .item .action {
+  font-size:24px;
+  width:24px;
+  margin:22px auto 0;
+  line-height:1;
+  display:block;
+  color:#4f86c3;
+  opacity:0.85;
+  transition:opacity 0.2s;
+  text-decoration:none;
+}
+
+.article-list .item .action:hover {
+  opacity:1;
+}
+
+  

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserSignin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/admin.css">
+    <link rel="stylesheet" href="/static/newuserhome.css">
+    <link rel="stylesheet" href="/static/newsignin.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header-dark">
+        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
+            <div class="container"><a class="navbar-brand" href="/templates/index.html">Quick Care </a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span
+                        class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+
+                    <form class="form-inline mr-auto" target="_self">
+                    </form><span class="navbar-text"><a href="/templates/adminlogin.html" class="login">Admin</a></span>
+                    <span class="navbar-text"><a href="/report" class="login">Report</a></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Header -->
+    <!-- <span class="navbar-text"><a href="/report" class="login">Report</a></span> -->
+
+    <div class="details">
+        <div class="patient">
+            <div id="cardHeader" class="container-fluid py-5 ">
+
+                <h1 class="display-5 fw-bold text-center">Patient Details DataBase</h1>
+                <form action="/compare_face" method="POST" enctype="multipart/form-data">
+                    <label for="photo" style="margin-left:47% ; ">Upload Image:</label>
+                    <input type="file" class="btn" style="margin-left:40% ; background-color: white;" name="photo"
+                        accept=".jpg,.jpeg,.png">
+                    <!-- <br><br> -->
+                    <input type="submit" value="Submit" class="btn" id="submit"
+                        style="margin-left:48%; margin-top: 15px; ">
+                </form>
+
+            </div>
+            <table class="table" style="background-color: white;">
+                <thead>
+                    <tr id="heading" class="heading bg-light">
+                        <th>Token No.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Contact Number</th>
+                        <th>Aadhar Number</th>
+                        <th>Gender</th>
+                        <th>Doctor Type</th>
+                        <th>Time Slot</th>
+                        <th>Condition</th>
+                        <th>PatientID</th>
+                        <th>Date</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in register %}
+                    <tr class="heading">
+                        <td>{{row.0}}</td>
+                        <td>{{row.1}}</td>
+                        <td>{{row.2}}</td>
+                        <td>{{row.3}}</td>
+                        <td>{{row.4}}</td>
+                        <td>{{row.5}}</td>
+                        <td>{{row.6}}</td>
+                        <td>{{row.7}}</td>
+                        <td>{{row.8}}</td>
+                        <td>{{row.9}}</td>
+                        <td>{{row.10}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        //menu toggle
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function () {
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        //add hovered class in selected list item
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+            item.addEventListener('mouseover', activeLink));
+
+        document.getElementById('submit').reset();
+    </script>
+</body>
+
+</html>
